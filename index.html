@@ -549,37 +549,40 @@
     <div class="about-text">
       <p>I'm Darren, a Computer Science student passionate about turning data into decisions and ideas into working software. I enjoy the full spectrum — from training models to shipping polished interfaces.</p>
       <p>My work spans machine learning projects, data pipelines, and web applications. I'm drawn to problems where rigorous thinking meets creative implementation.</p>
-      <p>Currently looking for opportunities in software engineering, data science, or ML roles where I can keep learning fast and ship meaningful things.</p>
+      <p>Currently looking for opportunities in software engineering, data science, or ML roles where I can keep learning fast and ship meaningful things. I enjoy working across the stack — from functional programming in Haskell and Scala to building full-stack AI-driven web apps.</p>
     </div>
     <div class="skills-grid">
       <div>
         <p class="skill-group-label">Languages</p>
         <div class="skill-tags">
           <span class="tag">Python</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">SQL</span>
           <span class="tag">Java</span>
-          <span class="tag">R</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Scala</span>
+          <span class="tag">Haskell</span>
+          <span class="tag">TypeScript</span>
         </div>
       </div>
       <div>
         <p class="skill-group-label">ML / Data</p>
         <div class="skill-tags">
-          <span class="tag">PyTorch</span>
+          <span class="tag">Random Forest</span>
+          <span class="tag">ANN</span>
           <span class="tag">scikit-learn</span>
+          <span class="tag">OpenCV</span>
           <span class="tag">Pandas</span>
           <span class="tag">NumPy</span>
-          <span class="tag">Matplotlib</span>
         </div>
       </div>
       <div>
         <p class="skill-group-label">Web & Tools</p>
         <div class="skill-tags">
           <span class="tag">React</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Flask</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Redux</span>
+          <span class="tag">Cassandra</span>
           <span class="tag">Git</span>
-          <span class="tag">Docker</span>
+          <span class="tag">HTML/CSS</span>
         </div>
       </div>
     </div>
@@ -597,69 +600,135 @@
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="ml">ML / Data</button>
     <button class="filter-btn" data-filter="web">Web Apps</button>
+    <button class="filter-btn" data-filter="other">Systems & FP</button>
   </div>
 
   <div class="projects-list" id="projectsList">
 
     <!-- PROJECT 1 -->
-    <a href="https://github.com/darrenlew2004" target="_blank" class="project-card" data-cat="ml">
+    <a href="https://github.com/darrenlew2004/PathFinder---Personalized-Academic-Dashboard" target="_blank" class="project-card" data-cat="ml">
       <span class="project-num">01</span>
       <div class="project-body">
-        <h3 class="project-title">Sentiment Analysis Model</h3>
-        <p class="project-desc">Built a fine-tuned transformer model to classify sentiment in user reviews. Achieved high accuracy on benchmark datasets with a clean Jupyter notebook walkthrough.</p>
+        <h3 class="project-title">PathFinder — Personalized Academic Dashboard</h3>
+        <p class="project-desc">Full-stack AI web app that predicts student success per course using a hybrid Random Forest + rule-based engine (84.5% accuracy). Trained on 99,362 records; delivers sub-10ms predictions via FastAPI, React/Redux, and Apache Cassandra.</p>
         <div class="project-tags">
           <span class="project-tag ml">ML</span>
+          <span class="project-tag web">Web</span>
           <span class="project-tag">Python</span>
-          <span class="project-tag">PyTorch</span>
-          <span class="project-tag">HuggingFace</span>
+          <span class="project-tag">React</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">Cassandra</span>
         </div>
       </div>
       <span class="project-arrow">↗</span>
     </a>
 
     <!-- PROJECT 2 -->
-    <a href="https://github.com/darrenlew2004" target="_blank" class="project-card" data-cat="web">
+    <a href="https://github.com/darrenlew2004/Ocean-Pollution-Website" target="_blank" class="project-card" data-cat="web">
       <span class="project-num">02</span>
       <div class="project-body">
-        <h3 class="project-title">Task Management Web App</h3>
-        <p class="project-desc">A full-stack productivity app with real-time updates, user authentication, and drag-and-drop task boards. Deployed on Vercel with a REST API backend.</p>
+        <h3 class="project-title">Ocean Pollution Website</h3>
+        <p class="project-desc">An awareness-focused multi-page website covering ocean pollution — complete with login/signup pages, an information hub, and a contact form. Built with pure HTML, CSS, and JavaScript.</p>
         <div class="project-tags">
           <span class="project-tag web">Web</span>
-          <span class="project-tag">React</span>
-          <span class="project-tag">Node.js</span>
-          <span class="project-tag">MongoDB</span>
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
         </div>
       </div>
       <span class="project-arrow">↗</span>
     </a>
 
     <!-- PROJECT 3 -->
-    <a href="https://github.com/darrenlew2004" target="_blank" class="project-card" data-cat="ml">
+    <a href="https://github.com/darrenlew2004/ToDoList_scala" target="_blank" class="project-card" data-cat="other">
       <span class="project-num">03</span>
       <div class="project-body">
-        <h3 class="project-title">Predictive Analytics Dashboard</h3>
-        <p class="project-desc">End-to-end data pipeline that ingests raw CSV data, trains a regression model, and visualises predictions in an interactive dashboard built with Plotly.</p>
+        <h3 class="project-title">Scala To-Do List</h3>
+        <p class="project-desc">A clean, functional task manager written in Scala — demonstrating functional programming principles with persistent storage via an embedded Derby database.</p>
         <div class="project-tags">
-          <span class="project-tag ml">ML</span>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">scikit-learn</span>
-          <span class="project-tag">Plotly</span>
+          <span class="project-tag">Scala</span>
+          <span class="project-tag">Functional Programming</span>
+          <span class="project-tag">Derby DB</span>
         </div>
       </div>
       <span class="project-arrow">↗</span>
     </a>
 
     <!-- PROJECT 4 -->
-    <a href="https://github.com/darrenlew2004" target="_blank" class="project-card" data-cat="web">
+    <a href="https://github.com/darrenlew2004/FPPAssignment3" target="_blank" class="project-card" data-cat="other">
       <span class="project-num">04</span>
       <div class="project-body">
-        <h3 class="project-title">Portfolio Website</h3>
-        <p class="project-desc">This very site — a static portfolio with zero dependencies, pure HTML/CSS/JS, and a 100 Lighthouse score. Hosted on GitHub Pages for maximum uptime.</p>
+        <h3 class="project-title">Haskell Sliding Puzzle Game</h3>
+        <p class="project-desc">A terminal-based sliding tile puzzle built entirely in Haskell, exploring purely functional programming, immutable state management, and type-safe game logic.</p>
         <div class="project-tags">
-          <span class="project-tag web">Web</span>
-          <span class="project-tag">HTML</span>
-          <span class="project-tag">CSS</span>
-          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">Haskell</span>
+          <span class="project-tag">Functional Programming</span>
+          <span class="project-tag">Game Logic</span>
+        </div>
+      </div>
+      <span class="project-arrow">↗</span>
+    </a>
+
+    <!-- PROJECT 5 -->
+    <a href="https://github.com/darrenlew2004/PRG1203-Final-Project" target="_blank" class="project-card" data-cat="other">
+      <span class="project-num">05</span>
+      <div class="project-body">
+        <h3 class="project-title">OOP Pokémon Game</h3>
+        <p class="project-desc">A Java-based Pokémon battle game built as an OOP final project — featuring inheritance hierarchies, polymorphism, encapsulation, and turn-based combat mechanics.</p>
+        <div class="project-tags">
+          <span class="project-tag">Java</span>
+          <span class="project-tag">OOP</span>
+          <span class="project-tag">Game Design</span>
+        </div>
+      </div>
+      <span class="project-arrow">↗</span>
+    </a>
+
+    <!-- PROJECT 6 -->
+    <a href="https://github.com/trjyap/DIP-project" target="_blank" class="project-card" data-cat="ml">
+      <span class="project-num">06</span>
+      <div class="project-body">
+        <h3 class="project-title">Digital Image Processing Project</h3>
+        <p class="project-desc">A collaborative DIP project applying classical and modern computer vision techniques — including image filtering, edge detection, segmentation, and feature extraction using Python and OpenCV.</p>
+        <div class="project-tags">
+          <span class="project-tag ml">ML</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">OpenCV</span>
+          <span class="project-tag">Image Processing</span>
+        </div>
+      </div>
+      <span class="project-arrow">↗</span>
+    </a>
+
+    <!-- PROJECT 7 -->
+    <a href="https://github.com/trjyap/CSC3034-ANN" target="_blank" class="project-card" data-cat="ml">
+      <span class="project-num">07</span>
+      <div class="project-body">
+        <h3 class="project-title">AI Project — Artificial Neural Network</h3>
+        <p class="project-desc">A collaborative ANN project implementing neural networks from the ground up — covering forward/backpropagation, activation functions, and training on real datasets to solve classification problems.</p>
+        <div class="project-tags">
+          <span class="project-tag ml">ML</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">ANN</span>
+          <span class="project-tag">Deep Learning</span>
+        </div>
+      </div>
+      <span class="project-arrow">↗</span>
+    </a>
+
+    <!-- PROJECT 8 -->
+    <a href="https://github.com/trjyap/ComVis-Driving-Scene-Algorithm" target="_blank" class="project-card" data-cat="ml">
+      <span class="project-num">08</span>
+      <div class="project-body">
+        <h3 class="project-title">ComVis — Driving Scene Algorithm</h3>
+        <p class="project-desc">A computer vision pipeline for autonomous driving scene understanding using the KITTI dataset. Combines YOLOv8 for 3D object detection with DeepLab-Xception for semantic segmentation — running a unified CombinedAlgo on CPU via MobileNet.</p>
+        <div class="project-tags">
+          <span class="project-tag ml">ML</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">YOLOv8</span>
+          <span class="project-tag">DeepLab</span>
+          <span class="project-tag">Computer Vision</span>
+          <span class="project-tag">KITTI</span>
         </div>
       </div>
       <span class="project-arrow">↗</span>
@@ -676,7 +745,7 @@
   </div>
   <div class="contact-grid">
     <p class="contact-blurb">
-      I'm currently open to <strong>full-time opportunities</strong> in software engineering, data science, AI engineering or ML. If you have an interesting project or role, I'd love to hear from you.
+      I'm currently open to <strong>internship</strong> and <strong>full-time opportunities</strong> in software engineering, data science, or ML. If you have an interesting project or role, I'd love to hear from you.
     </p>
     <div class="contact-links">
       <a href="https://github.com/darrenlew2004" target="_blank" class="contact-link">
@@ -687,11 +756,11 @@
         </div>
         <span class="contact-link-arrow">→</span>
       </a>
-      <a href="mailto:darrenlew2004@gmail.com" class="contact-link">
+      <a href="/cdn-cgi/l/email-protection#fe9a9f8c8c9b90929b89cccececabe99939f9792d09d9193" class="contact-link">
         <div class="contact-link-icon">✉</div>
         <div class="contact-link-meta">
           <div class="contact-link-label">Email</div>
-          <div class="contact-link-sub">darrenlew2004@gmail.com</div>
+          <div class="contact-link-sub"><span class="__cf_email__" data-cfemail="6e0a0f1c1c0b00020b195c5e5e5a2e09030f0702400d0103">[email&#160;protected]</span></div>
         </div>
         <span class="contact-link-arrow">→</span>
       </a>
@@ -699,7 +768,7 @@
         <div class="contact-link-icon">in</div>
         <div class="contact-link-meta">
           <div class="contact-link-label">LinkedIn</div>
-          <div class="contact-link-sub">linkedin.com/in/darrenlew</div>
+          <div class="contact-link-sub">linkedin.com/in/darrenlew2004</div>
         </div>
         <span class="contact-link-arrow">→</span>
       </a>
@@ -713,7 +782,7 @@
   <span class="footer-note">Built with HTML · Hosted on GitHub Pages</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Filter logic ──
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card[data-cat]');
@@ -733,21 +802,4 @@
   // ── Scroll reveal ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.project-card, .contact-link, .about-grid, .skills-grid').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
-    observer.observe(el);
-  });
-</script>
-
-</body>
-</html>
+      if (entry.isIntersecting)

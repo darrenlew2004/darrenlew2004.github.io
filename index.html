@@ -36,7 +36,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -49,7 +49,6 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-logo {
       font-family: var(--mono);
       font-size: 0.85rem;
@@ -58,13 +57,7 @@
       text-decoration: none;
       font-weight: 500;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-family: var(--mono);
       font-size: 0.75rem;
@@ -74,17 +67,16 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--accent); }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section {
       padding: 6rem 2.5rem;
       max-width: var(--max);
       margin: 0 auto;
     }
 
-    /* ── HERO ── */
+    /* HERO */
     #hero {
       padding-top: 11rem;
       padding-bottom: 7rem;
@@ -94,7 +86,6 @@
       gap: 2rem;
       border-bottom: 1px solid var(--border);
     }
-
     .hero-eyebrow {
       font-family: var(--mono);
       font-size: 0.75rem;
@@ -105,7 +96,6 @@
       opacity: 0;
       animation: fadeUp 0.7s 0.1s forwards;
     }
-
     .hero-name {
       font-family: var(--serif);
       font-size: clamp(3rem, 7vw, 5.5rem);
@@ -115,12 +105,7 @@
       opacity: 0;
       animation: fadeUp 0.7s 0.25s forwards;
     }
-
-    .hero-name em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
+    .hero-name em { font-style: italic; color: var(--accent); }
     .hero-sub {
       margin-top: 1.5rem;
       font-size: 1.05rem;
@@ -129,7 +114,6 @@
       opacity: 0;
       animation: fadeUp 0.7s 0.4s forwards;
     }
-
     .hero-cta {
       margin-top: 2.5rem;
       display: flex;
@@ -138,7 +122,6 @@
       opacity: 0;
       animation: fadeUp 0.7s 0.55s forwards;
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -153,25 +136,10 @@
       cursor: pointer;
       border: none;
     }
-
-    .btn-primary {
-      background: var(--ink);
-      color: var(--bg);
-    }
-    .btn-primary:hover {
-      background: var(--accent);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink-muted);
-      border: 1px solid var(--border);
-    }
-    .btn-ghost:hover {
-      border-color: var(--ink-muted);
-      color: var(--ink);
-    }
-
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-ghost { background: transparent; color: var(--ink-muted); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--ink-muted); color: var(--ink); }
     .hero-badge {
       display: flex;
       flex-direction: column;
@@ -180,7 +148,6 @@
       opacity: 0;
       animation: fadeUp 0.7s 0.6s forwards;
     }
-
     .badge-pill {
       font-family: var(--mono);
       font-size: 0.7rem;
@@ -191,14 +158,8 @@
       color: var(--accent);
     }
 
-    /* ── SECTION HEADER ── */
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
+    /* SECTION HEADER */
+    .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3rem; }
     .section-label {
       font-family: var(--mono);
       font-size: 0.72rem;
@@ -206,7 +167,6 @@
       text-transform: uppercase;
       color: var(--ink-faint);
     }
-
     .section-title {
       font-family: var(--serif);
       font-size: clamp(1.8rem, 4vw, 2.8rem);
@@ -214,31 +174,12 @@
       color: var(--ink);
     }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     #about { border-bottom: 1px solid var(--border); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: var(--ink-muted);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--ink-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
     .about-text p:last-child { margin-bottom: 0; }
-
-    .skills-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
+    .skills-grid { display: flex; flex-direction: column; gap: 1.5rem; }
     .skill-group-label {
       font-family: var(--mono);
       font-size: 0.7rem;
@@ -247,13 +188,7 @@
       color: var(--ink-faint);
       margin-bottom: 0.6rem;
     }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag {
       font-family: var(--mono);
       font-size: 0.75rem;
@@ -264,23 +199,11 @@
       background: var(--surface);
       transition: all 0.2s;
     }
+    .tag:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-pale); }
 
-    .tag:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-pale);
-    }
-
-    /* ── PROJECTS ── */
+    /* PROJECTS */
     #projects { border-bottom: 1px solid var(--border); }
-
-    .filter-bar {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
-
+    .filter-bar { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
     .filter-btn {
       font-family: var(--mono);
       font-size: 0.72rem;
@@ -293,20 +216,12 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-
-    .filter-btn.active,
-    .filter-btn:hover {
+    .filter-btn.active, .filter-btn:hover {
       background: var(--ink);
       color: var(--bg);
       border-color: var(--ink);
     }
-
-    .projects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
+    .projects-list { display: flex; flex-direction: column; }
     .project-card {
       display: grid;
       grid-template-columns: auto 1fr auto;
@@ -316,12 +231,10 @@
       border-bottom: 1px solid var(--border);
       text-decoration: none;
       color: inherit;
-      transition: all 0.2s;
+      transition: padding 0.2s;
       position: relative;
     }
-
     .project-card:first-child { border-top: 1px solid var(--border); }
-
     .project-card::before {
       content: '';
       position: absolute;
@@ -333,10 +246,9 @@
       transform-origin: top;
       transition: transform 0.25s;
     }
-
     .project-card:hover::before { transform: scaleY(1); }
     .project-card:hover { padding-left: 0.5rem; }
-
+    .project-card.hidden { display: none; }
     .project-num {
       font-family: var(--mono);
       font-size: 0.72rem;
@@ -344,9 +256,6 @@
       padding-top: 0.2rem;
       min-width: 2ch;
     }
-
-    .project-body {}
-
     .project-title {
       font-family: var(--serif);
       font-size: 1.3rem;
@@ -354,9 +263,7 @@
       margin-bottom: 0.4rem;
       transition: color 0.2s;
     }
-
     .project-card:hover .project-title { color: var(--accent); }
-
     .project-desc {
       font-size: 0.9rem;
       color: var(--ink-muted);
@@ -364,9 +271,7 @@
       margin-bottom: 0.9rem;
       max-width: 500px;
     }
-
     .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-
     .project-tag {
       font-family: var(--mono);
       font-size: 0.67rem;
@@ -375,48 +280,21 @@
       color: var(--accent);
       background: var(--accent-pale);
     }
-
     .project-tag.web { color: #1a6b5c; background: #e6f4f1; }
     .project-tag.ml  { color: #c8440a; background: #f5ebe5; }
-
     .project-arrow {
       font-size: 1.1rem;
       color: var(--ink-faint);
       padding-top: 0.15rem;
       transition: transform 0.2s, color 0.2s;
     }
+    .project-card:hover .project-arrow { transform: translate(3px, -3px); color: var(--accent); }
 
-    .project-card:hover .project-arrow {
-      transform: translate(3px, -3px);
-      color: var(--accent);
-    }
-
-    /* ── HIDDEN PROJECT ── */
-    .project-card[data-cat] { transition: opacity 0.3s, all 0.2s; }
-    .project-card.hidden { display: none; }
-
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .contact-blurb {
-      font-size: 1rem;
-      color: var(--ink-muted);
-      line-height: 1.8;
-    }
-
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-blurb { font-size: 1rem; color: var(--ink-muted); line-height: 1.8; }
     .contact-blurb strong { color: var(--ink); font-weight: 500; }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
     .contact-link {
       display: flex;
       align-items: center;
@@ -429,13 +307,7 @@
       color: var(--ink);
       transition: all 0.2s;
     }
-
-    .contact-link:hover {
-      border-color: var(--accent);
-      background: var(--accent-pale);
-      transform: translateX(4px);
-    }
-
+    .contact-link:hover { border-color: var(--accent); background: var(--accent-pale); transform: translateX(4px); }
     .contact-link-icon {
       width: 36px; height: 36px;
       display: flex; align-items: center; justify-content: center;
@@ -444,30 +316,13 @@
       font-size: 1rem;
       flex-shrink: 0;
     }
-
-    .contact-link-label {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-    }
-
-    .contact-link-sub {
-      font-size: 0.8rem;
-      color: var(--ink-faint);
-      margin-top: 0.1rem;
-    }
-
+    .contact-link-label { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.06em; }
+    .contact-link-sub { font-size: 0.8rem; color: var(--ink-faint); margin-top: 0.1rem; }
     .contact-link-meta { flex: 1; }
-
-    .contact-link-arrow {
-      color: var(--ink-faint);
-      font-size: 0.9rem;
-      transition: transform 0.2s;
-    }
-
+    .contact-link-arrow { color: var(--ink-faint); font-size: 0.9rem; transition: transform 0.2s; }
     .contact-link:hover .contact-link-arrow { transform: translateX(3px); }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem 2.5rem;
@@ -477,26 +332,13 @@
       max-width: var(--max);
       margin: 0 auto;
     }
+    .footer-copy, .footer-note { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); }
 
-    .footer-copy {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--ink-faint);
-    }
-
-    .footer-note {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--ink-faint);
-    }
-
-    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       nav { padding: 1rem 1.25rem; }
       section { padding: 4rem 1.25rem; }
@@ -511,7 +353,6 @@
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <a href="#hero" class="nav-logo">DL.portfolio</a>
   <ul class="nav-links">
@@ -521,7 +362,6 @@
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
 <section id="hero">
   <div>
     <p class="hero-eyebrow">Computer Science · Malaysia</p>
@@ -540,7 +380,6 @@
   </div>
 </section>
 
-<!-- ── ABOUT ── -->
 <section id="about">
   <div class="section-header">
     <span class="section-label">01 —</span>
@@ -550,7 +389,7 @@
     <div class="about-text">
       <p>I'm Darren, a Computer Science graduate passionate about turning data into decisions and ideas into working software. I enjoy the full spectrum — from training models to shipping polished interfaces.</p>
       <p>My work spans machine learning projects, data pipelines, and web applications. I'm drawn to problems where rigorous thinking meets creative implementation.</p>
-      <p>Currently looking for opportunities in software engineering, data science, AI engineer or ML roles where I can keep learning fast and ship meaningful things. I enjoy working across the stack — from functional programming in Haskell and Scala to building full-stack AI-driven web apps.</p>
+      <p>Currently looking for opportunities in software engineering, data science, AI engineering, or ML roles where I can keep learning fast and ship meaningful things. I enjoy working across the stack — from functional programming in Haskell and Scala to building full-stack AI-driven web apps.</p>
     </div>
     <div class="skills-grid">
       <div>
@@ -590,7 +429,6 @@
   </div>
 </section>
 
-<!-- ── PROJECTS ── -->
 <section id="projects">
   <div class="section-header">
     <span class="section-label">02 —</span>
@@ -601,12 +439,11 @@
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="ml">ML / Data</button>
     <button class="filter-btn" data-filter="web">Web Apps</button>
-    <button class="filter-btn" data-filter="other">Systems & FP</button>
+    <button class="filter-btn" data-filter="other">Systems &amp; FP</button>
   </div>
 
   <div class="projects-list" id="projectsList">
 
-    <!-- PROJECT 1 -->
     <a href="https://github.com/darrenlew2004/PathFinder---Personalized-Academic-Dashboard" target="_blank" class="project-card" data-cat="ml">
       <span class="project-num">01</span>
       <div class="project-body">
@@ -624,7 +461,6 @@
       <span class="project-arrow">↗</span>
     </a>
 
-    <!-- PROJECT 2 -->
     <a href="https://github.com/darrenlew2004/Ocean-Pollution-Website" target="_blank" class="project-card" data-cat="web">
       <span class="project-num">02</span>
       <div class="project-body">
@@ -640,7 +476,6 @@
       <span class="project-arrow">↗</span>
     </a>
 
-    <!-- PROJECT 3 -->
     <a href="https://github.com/darrenlew2004/ToDoList_scala" target="_blank" class="project-card" data-cat="other">
       <span class="project-num">03</span>
       <div class="project-body">
@@ -655,7 +490,6 @@
       <span class="project-arrow">↗</span>
     </a>
 
-    <!-- PROJECT 4 -->
     <a href="https://github.com/darrenlew2004/FPPAssignment3" target="_blank" class="project-card" data-cat="other">
       <span class="project-num">04</span>
       <div class="project-body">
@@ -670,12 +504,11 @@
       <span class="project-arrow">↗</span>
     </a>
 
-    <!-- PROJECT 5 -->
     <a href="https://github.com/darrenlew2004/PRG1203-Final-Project" target="_blank" class="project-card" data-cat="other">
       <span class="project-num">05</span>
       <div class="project-body">
-        <h3 class="project-title">OOP Pokémon Game</h3>
-        <p class="project-desc">A Java-based Pokémon battle game built as an OOP final project — featuring inheritance hierarchies, polymorphism, encapsulation, and turn-based combat mechanics.</p>
+        <h3 class="project-title">OOP Pokemon Game</h3>
+        <p class="project-desc">A Java-based Pokemon battle game built as an OOP final project — featuring inheritance hierarchies, polymorphism, encapsulation, and turn-based combat mechanics.</p>
         <div class="project-tags">
           <span class="project-tag">Java</span>
           <span class="project-tag">OOP</span>
@@ -685,7 +518,6 @@
       <span class="project-arrow">↗</span>
     </a>
 
-    <!-- PROJECT 6 -->
     <a href="https://github.com/trjyap/DIP-project" target="_blank" class="project-card" data-cat="ml">
       <span class="project-num">06</span>
       <div class="project-body">
@@ -701,7 +533,6 @@
       <span class="project-arrow">↗</span>
     </a>
 
-    <!-- PROJECT 7 -->
     <a href="https://github.com/trjyap/CSC3034-ANN" target="_blank" class="project-card" data-cat="ml">
       <span class="project-num">07</span>
       <div class="project-body">
@@ -717,12 +548,11 @@
       <span class="project-arrow">↗</span>
     </a>
 
-    <!-- PROJECT 8 -->
     <a href="https://github.com/trjyap/ComVis-Driving-Scene-Algorithm" target="_blank" class="project-card" data-cat="ml">
       <span class="project-num">08</span>
       <div class="project-body">
         <h3 class="project-title">ComVis — Driving Scene Algorithm</h3>
-        <p class="project-desc">A computer vision pipeline for autonomous driving scene understanding using the KITTI dataset. Combines YOLOv8 for 3D object detection with DeepLab-Xception for semantic segmentation — running a unified CombinedAlgo on CPU via MobileNet.</p>
+        <p class="project-desc">A computer vision pipeline for autonomous driving scene understanding using the KITTI dataset. Combines YOLOv8 for 3D object detection with DeepLab-Xception for semantic segmentation, running a unified pipeline on CPU via MobileNet.</p>
         <div class="project-tags">
           <span class="project-tag ml">ML</span>
           <span class="project-tag">Python</span>
@@ -738,7 +568,6 @@
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
 <section id="contact">
   <div class="section-header">
     <span class="section-label">03 —</span>
@@ -750,20 +579,20 @@
     </p>
     <div class="contact-links">
       <a href="https://github.com/darrenlew2004" target="_blank" class="contact-link">
-        <div class="contact-link-icon">⌥</div>
+        <div class="contact-link-icon">&#9654;</div>
         <div class="contact-link-meta">
           <div class="contact-link-label">GitHub</div>
           <div class="contact-link-sub">github.com/darrenlew2004</div>
         </div>
-        <span class="contact-link-arrow">→</span>
+        <span class="contact-link-arrow">&#8594;</span>
       </a>
       <a href="mailto:darrenlew2004@gmail.com" class="contact-link">
-        <div class="contact-link-icon">✉</div>
+        <div class="contact-link-icon">&#9993;</div>
         <div class="contact-link-meta">
           <div class="contact-link-label">Email</div>
           <div class="contact-link-sub">darrenlew2004@gmail.com</div>
         </div>
-        <span class="contact-link-arrow">→</span>
+        <span class="contact-link-arrow">&#8594;</span>
       </a>
       <a href="https://www.linkedin.com/in/darrenlew2004/" target="_blank" class="contact-link">
         <div class="contact-link-icon">in</div>
@@ -771,36 +600,56 @@
           <div class="contact-link-label">LinkedIn</div>
           <div class="contact-link-sub">linkedin.com/in/darrenlew2004</div>
         </div>
-        <span class="contact-link-arrow">→</span>
+        <span class="contact-link-arrow">&#8594;</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
-  <span class="footer-copy">© 2026 Darren Lew. All rights reserved.</span>
-  <span class="footer-note">Built with HTML · Hosted on GitHub Pages</span>
+  <span class="footer-copy">&#169; 2026 Darren Lew. All rights reserved.</span>
+  <span class="footer-note">Built with HTML &#183; Hosted on GitHub Pages</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // ── Filter logic ──
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card[data-cat]');
+<script>
+  // Filter logic
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.project-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      const f = btn.dataset.filter;
-      cards.forEach(card => {
-        const match = f === 'all' || card.dataset.cat === f;
-        card.classList.toggle('hidden', !match);
+      var filter = btn.getAttribute('data-filter');
+      cards.forEach(function(card) {
+        var cat = card.getAttribute('data-cat');
+        if (filter === 'all' || cat === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
       });
     });
   });
 
-  // ── Scroll reveal ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting)
+  // Scroll reveal
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.project-card, .contact-link, .about-grid').forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>

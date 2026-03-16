@@ -25,7 +25,19 @@
       --max: 900px;
     }
 
+    html.dark {
+      --bg: #111110;
+      --surface: #1c1b19;
+      --ink: #f0ede8;
+      --ink-muted: #9e9b94;
+      --ink-faint: #4a4845;
+      --accent: #e8612a;
+      --accent-pale: #2a1a12;
+      --border: #2c2b28;
+    }
+
     html { scroll-behavior: smooth; }
+    body { transition: background 0.3s, color 0.3s; }
 
     body {
       background: var(--bg);
@@ -334,7 +346,114 @@
     }
     .footer-copy, .footer-note { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); }
 
-    @keyframes fadeUp {
+    /* EXPERIENCE TIMELINE */
+    #experience { border-bottom: 1px solid var(--border); }
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .timeline-item:first-child { border-top: 1px solid var(--border); }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.25s;
+    }
+    .timeline-item:hover::before { transform: scaleY(1); }
+    .timeline-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 0.15rem;
+    }
+    .timeline-period {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+    }
+    .timeline-type {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      width: fit-content;
+    }
+    .timeline-type.work { color: #1a6b5c; background: #e6f4f1; }
+    .timeline-type.leadership { color: #c8440a; background: #f5ebe5; }
+    .timeline-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .timeline-org {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .timeline-desc { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.7; }
+
+    /* ACHIEVEMENTS */
+    #achievements { border-bottom: 1px solid var(--border); }
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .achievement-card {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: all 0.2s;
+    }
+    .achievement-card:hover {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+      transform: translateY(-2px);
+    }
+    .achievement-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 0.1rem;
+    }
+    .achievement-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .achievement-sub {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .achievement-desc { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.6; }
+
+    @media (max-width: 700px) {
+      .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .achievements-grid { grid-template-columns: 1fr; }
+    }
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
@@ -349,6 +468,27 @@
       .project-arrow { display: none; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
+
+    /* DARK MODE */
+    html.dark nav { background: rgba(17,17,16,0.9); }
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      cursor: pointer;
+      padding: 0.3rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle .t-icon { transition: transform 0.4s; display: inline-block; }
+    html.dark .theme-toggle .t-icon { transform: rotate(20deg); }
   </style>
 </head>
 <body>
@@ -357,9 +497,15 @@
   <a href="#hero" class="nav-logo">DL.portfolio</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Achievements</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="t-icon" id="themeIcon">&#9790;</span>
+    <span id="themeLabel">Dark</span>
+  </button>
 </nav>
 
 <section id="hero">
@@ -387,9 +533,9 @@
   </div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm Darren, a Computer Science graduate passionate about turning data into decisions and ideas into working software. I enjoy the full spectrum — from training models to shipping polished interfaces.</p>
-      <p>My work spans machine learning projects, data pipelines, and web applications. I'm drawn to problems where rigorous thinking meets creative implementation.</p>
-      <p>Currently looking for opportunities in software engineering, data science, AI engineering, or ML roles where I can keep learning fast and ship meaningful things. I enjoy working across the stack — from functional programming in Haskell and Scala to building full-stack AI-driven web apps.</p>
+      <p>I'm Darren, a Computer Science graduate (CGPA: 3.68) from Sunway University, Malaysia. I'm passionate about turning data into decisions and ideas into working software — enjoying everything from training ML models to shipping polished web interfaces.</p>
+      <p>Outside of code, I'm a competitive swimmer who represented Malaysia at the SEA Age Group Championships, winning multiple gold medals and Best Boy titles. I hold a Taekwondo Black Belt and speak English, Chinese, and Malay.</p>
+      <p>Currently seeking entry-level roles in software engineering, data science, or ML where I can keep learning fast and build meaningful things.</p>
     </div>
     <div class="skills-grid">
       <div>
@@ -425,13 +571,115 @@
           <span class="tag">HTML/CSS</span>
         </div>
       </div>
+      <div>
+        <p class="skill-group-label">Spoken Languages</p>
+        <div class="skill-tags">
+          <span class="tag">English</span>
+          <span class="tag">Chinese</span>
+          <span class="tag">Malay</span>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-label">02 —</span>
+    <h2 class="section-title">Experience</h2>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <span class="timeline-period">Jan 2025 – Apr 2025</span>
+        <span class="timeline-type work">Work</span>
+      </div>
+      <div class="timeline-body">
+        <h3 class="timeline-title">Software Developer Intern</h3>
+        <p class="timeline-org">Origin Integrated Studios</p>
+        <p class="timeline-desc">Developed responsive digital forms ensuring cross-device compatibility and visual alignment with brand guidelines. Conducted QA testing to verify accuracy, security compliance, and data privacy standards prior to client delivery.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <span class="timeline-period">Jun 2024 – Jul 2025</span>
+        <span class="timeline-type leadership">Leadership</span>
+      </div>
+      <div class="timeline-body">
+        <h3 class="timeline-title">Secretary</h3>
+        <p class="timeline-org">Sunway Swim Club</p>
+        <p class="timeline-desc">Managed club documents, organised meetings, tracked attendance, and oversaw member recruitment. Assisted in planning and coordinating club events including preparing proposals and post-event reports.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <span class="timeline-period">Sep 2023 – Aug 2024</span>
+        <span class="timeline-type leadership">Leadership</span>
+      </div>
+      <div class="timeline-body">
+        <h3 class="timeline-title">Extracurricular Executive</h3>
+        <p class="timeline-org">Sunway University Student Council</p>
+        <p class="timeline-desc">Maintained club documents, facilitated meetings, monitored attendance, and led member recruitment. Played a key role in planning and executing club events — from drafting proposals to compiling post-event reports.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-header">
+    <span class="section-label">03 —</span>
+    <h2 class="section-title">Achievements</h2>
+  </div>
+  <div class="achievements-grid">
+
+    <div class="achievement-card">
+      <div class="achievement-icon">&#127940;</div>
+      <div class="achievement-body">
+        <h3 class="achievement-title">SEA Age Group Championships</h3>
+        <p class="achievement-sub">2017 &amp; 2019 · International Swimming</p>
+        <p class="achievement-desc">Won Best Boy in 2017 with 4 golds and 1 bronze. Returned in 2019 to claim another bronze on the regional stage.</p>
+      </div>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-icon">&#127941;</div>
+      <div class="achievement-body">
+        <h3 class="achievement-title">MSSM Inter-Countries Swimming</h3>
+        <p class="achievement-sub">2017 – 2020 · National Level</p>
+        <p class="achievement-desc">Won Overall Swimmer and 2x Best Boy. Collected 20+ golds, 10+ silvers, and 7 bronzes over four years of national competition.</p>
+      </div>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-icon">&#127947;</div>
+      <div class="achievement-body">
+        <h3 class="achievement-title">MSSS Inter-States Swimming</h3>
+        <p class="achievement-sub">2017 – 2020 · State Level</p>
+        <p class="achievement-desc">Won 3x Best Boy, broke 5 records, and accumulated 30 golds, 10 silvers, and 2 bronzes across four state championship seasons.</p>
+      </div>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-icon">&#129354;</div>
+      <div class="achievement-body">
+        <h3 class="achievement-title">Taekwondo Black Belt</h3>
+        <p class="achievement-sub">Martial Arts</p>
+        <p class="achievement-desc">Achieved Black Belt in Taekwondo, demonstrating discipline, perseverance, and commitment to long-term personal development.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <section id="projects">
   <div class="section-header">
-    <span class="section-label">02 —</span>
+    <span class="section-label">04 —</span>
     <h2 class="section-title">Projects</h2>
   </div>
 
@@ -570,7 +818,7 @@
 
 <section id="contact">
   <div class="section-header">
-    <span class="section-label">03 —</span>
+    <span class="section-label">05 —</span>
     <h2 class="section-title">Get in Touch</h2>
   </div>
   <div class="contact-grid">
@@ -586,11 +834,11 @@
         </div>
         <span class="contact-link-arrow">&#8594;</span>
       </a>
-      <a href="mailto:darrenlew2004@gmail.com" class="contact-link">
+      <a href="/cdn-cgi/l/email-protection#bcd8ddceced9d2d0d9cb8e8c8c88fcdbd1ddd5d092dfd3d1" class="contact-link">
         <div class="contact-link-icon">&#9993;</div>
         <div class="contact-link-meta">
           <div class="contact-link-label">Email</div>
-          <div class="contact-link-sub">darrenlew2004@gmail.com</div>
+          <div class="contact-link-sub"><span class="__cf_email__" data-cfemail="d8bcb9aaaabdb6b4bdafeae8e8ec98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span></div>
         </div>
         <span class="contact-link-arrow">&#8594;</span>
       </a>
@@ -611,7 +859,36 @@
   <span class="footer-note">Built with HTML &#183; Hosted on GitHub Pages</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Dark mode toggle
+  var toggleBtn = document.getElementById('themeToggle');
+  var themeIcon = document.getElementById('themeIcon');
+  var themeLabel = document.getElementById('themeLabel');
+
+  function setDark(on) {
+    if (on) {
+      document.documentElement.classList.add('dark');
+      themeIcon.innerHTML = '&#9728;';
+      themeLabel.textContent = 'Light';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeIcon.innerHTML = '&#9790;';
+      themeLabel.textContent = 'Dark';
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  // Load saved preference
+  var saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    setDark(true);
+  }
+
+  toggleBtn.addEventListener('click', function() {
+    setDark(!document.documentElement.classList.contains('dark'));
+  });
+
   // Filter logic
   var filterBtns = document.querySelectorAll('.filter-btn');
   var cards = document.querySelectorAll('.project-card');
@@ -643,7 +920,7 @@
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.project-card, .contact-link, .about-grid').forEach(function(el) {
+  document.querySelectorAll('.project-card, .contact-link, .about-grid, .timeline-item, .achievement-card').forEach(function(el) {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';

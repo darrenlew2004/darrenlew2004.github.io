@@ -469,6 +469,123 @@
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
 
+    /* JOURNEY TIMELINE */
+    #journey {
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .journey-track {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-left: 2rem;
+    }
+    .journey-line {
+      position: absolute;
+      left: 0.45rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 2px;
+      background: var(--border);
+    }
+    .journey-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.5rem 1fr;
+      gap: 1.25rem;
+      padding: 1.1rem 0;
+      align-items: start;
+    }
+    .journey-dot {
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 50%;
+      background: var(--border);
+      border: 2px solid var(--bg);
+      outline: 2px solid var(--border);
+      margin-top: 0.3rem;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      position: relative;
+      z-index: 1;
+    }
+    .journey-dot.accent {
+      background: var(--accent);
+      outline-color: var(--accent);
+    }
+    .journey-dot.work {
+      background: #1a6b5c;
+      outline-color: #1a6b5c;
+    }
+    .journey-dot.now-dot {
+      background: var(--accent);
+      outline-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-pale);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 4px var(--accent-pale); }
+      50%       { box-shadow: 0 0 0 8px transparent; }
+    }
+    .journey-card {
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: all 0.2s;
+    }
+    .journey-card:hover {
+      border-color: var(--accent);
+      transform: translateX(4px);
+    }
+    .now-card {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+    }
+    .journey-year {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .journey-event {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .journey-detail {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+      margin-bottom: 0.6rem;
+    }
+    .journey-tag {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.55rem;
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .journey-tag.edu      { background: #e8f0fb; color: #2a5caa; }
+    .journey-tag.sport    { background: #e6f4f1; color: #1a6b5c; }
+    .journey-tag.lead     { background: var(--accent-pale); color: var(--accent); }
+    .journey-tag.work-tag { background: #e6f4f1; color: #1a6b5c; }
+    .journey-tag.open     { background: var(--accent-pale); color: var(--accent); }
+
+    html.dark .journey-tag.edu   { background: #0f1f3d; color: #6fa3ef; }
+    html.dark .journey-tag.sport { background: #0a2420; color: #4db8a8; }
+
+    @media (max-width: 700px) {
+      .journey-track { padding-left: 1.5rem; }
+      .journey-item  { grid-template-columns: 1rem 1fr; gap: 0.75rem; }
+    }
+
     /* DARK MODE */
     html.dark nav { background: rgba(17,17,16,0.9); }
     .theme-toggle {
@@ -497,6 +614,7 @@
   <a href="#hero" class="nav-logo">DL.portfolio</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -523,6 +641,99 @@
     <span class="badge-pill">AI Engineer</span>
     <span class="badge-pill">Web Development</span>
     <span class="badge-pill">Open to work</span>
+  </div>
+</section>
+
+<!-- JOURNEY TIMELINE -->
+<section id="journey">
+  <div class="section-header">
+    <span class="section-label">00 —</span>
+    <h2 class="section-title">My Journey</h2>
+  </div>
+  <div class="journey-track">
+
+    <div class="journey-line"></div>
+
+    <div class="journey-item" data-year="2017">
+      <div class="journey-dot"></div>
+      <div class="journey-card">
+        <span class="journey-year">2017 – 2021</span>
+        <h3 class="journey-event">Sri KL International School</h3>
+        <p class="journey-detail">Completed IGCSE · 1 A*, 2 As, 5 Bs, 1 C</p>
+        <span class="journey-tag edu">Education</span>
+      </div>
+    </div>
+
+    <div class="journey-item" data-year="2017">
+      <div class="journey-dot accent"></div>
+      <div class="journey-card">
+        <span class="journey-year">2017 – 2020</span>
+        <h3 class="journey-event">National &amp; International Swimming</h3>
+        <p class="journey-detail">MSSS · MSSM · SEA Age Group — 50+ medals, 5 records broken</p>
+        <span class="journey-tag sport">Sport</span>
+      </div>
+    </div>
+
+    <div class="journey-item" data-year="2022">
+      <div class="journey-dot"></div>
+      <div class="journey-card">
+        <span class="journey-year">2022</span>
+        <h3 class="journey-event">Sunway College</h3>
+        <p class="journey-detail">Foundation in Science &amp; Technology · 3.66 CGPA</p>
+        <span class="journey-tag edu">Education</span>
+      </div>
+    </div>
+
+    <div class="journey-item" data-year="2023">
+      <div class="journey-dot"></div>
+      <div class="journey-card">
+        <span class="journey-year">2023 – 2026</span>
+        <h3 class="journey-event">Sunway University</h3>
+        <p class="journey-detail">Bachelor (Hons) Computer Science · 3.68 CGPA</p>
+        <span class="journey-tag edu">Education</span>
+      </div>
+    </div>
+
+    <div class="journey-item" data-year="2023">
+      <div class="journey-dot accent"></div>
+      <div class="journey-card">
+        <span class="journey-year">Sep 2023 – Aug 2024</span>
+        <h3 class="journey-event">Extracurricular Executive</h3>
+        <p class="journey-detail">Sunway University Student Council — events &amp; club leadership</p>
+        <span class="journey-tag lead">Leadership</span>
+      </div>
+    </div>
+
+    <div class="journey-item" data-year="2024">
+      <div class="journey-dot accent"></div>
+      <div class="journey-card">
+        <span class="journey-year">Jun 2024 – Jul 2025</span>
+        <h3 class="journey-event">Secretary, Sunway Swim Club</h3>
+        <p class="journey-detail">Club management, event planning &amp; member coordination</p>
+        <span class="journey-tag lead">Leadership</span>
+      </div>
+    </div>
+
+    <div class="journey-item" data-year="2025">
+      <div class="journey-dot work"></div>
+      <div class="journey-card">
+        <span class="journey-year">Jan 2025 – Apr 2025</span>
+        <h3 class="journey-event">Software Developer Intern</h3>
+        <p class="journey-detail">Origin Integrated Studios — responsive forms &amp; QA testing</p>
+        <span class="journey-tag work-tag">Work</span>
+      </div>
+    </div>
+
+    <div class="journey-item now">
+      <div class="journey-dot now-dot"></div>
+      <div class="journey-card now-card">
+        <span class="journey-year">Now</span>
+        <h3 class="journey-event">Open to Opportunities</h3>
+        <p class="journey-detail">Seeking roles in software engineering, ML, or data science</p>
+        <span class="journey-tag open">Open to Work</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -920,7 +1131,7 @@
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.project-card, .contact-link, .about-grid, .timeline-item, .achievement-card').forEach(function(el) {
+  document.querySelectorAll('.project-card, .contact-link, .about-grid, .timeline-item, .achievement-card, .journey-card').forEach(function(el) {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
